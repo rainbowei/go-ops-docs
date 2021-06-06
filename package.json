@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
-  },
-  "devDependencies": {
-    "cz-conventional-changelog": "^3.2.0"
-  }
-}
