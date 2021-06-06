@@ -1,6 +1,6 @@
 * Jenkins
 
-  * [快速开始](zh-cn/quickstart.md)
+  * [jenkins部署k8s项目](jenkins/jenkins部署k8s项目.md)
   * [多页文档](zh-cn/more-pages.md)
   * [定制导航栏](zh-cn/custom-navbar.md)
   * [封面](zh-cn/cover.md)
