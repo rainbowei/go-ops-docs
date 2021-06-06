@@ -32,8 +32,8 @@ services:
 ```
 ## 3. jenkins从节点配置：
 点击系统管理-->节点管理-->新建节点,输入节点名称，选择固定节点新建从节点。
-![avatar](./images/jenkins.png),这里指定安装目录和启动方式。然后点击保存。
-![avatar](./images/agent.png)
+![avatar](../images/jenkins.png),这里指定安装目录和启动方式。然后点击保存。
+![avatar](../images/agent.png)
 根据提升下载agent的jar包，然后在从节点主机上，根据提提示的命令启动从节点。
 ## 3. 新建piplile项目：
 Jenkinsfile文件内容如下：
@@ -93,7 +93,7 @@ jenkins-robot-token-n8w6b
 eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZXZvcHMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoiamVua2lucy1yb2JvdC10b2tlbi1uOHc2YiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJqZW5raW5zLXJvYm90Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiOTcyZTY0OGYtMTYxZC00NmM5LWI0ZjgtYjFkNTdlOWY4NTBjIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRldm9wczpqZW5raW5zLXJvYm90In0.ArQvcaEqCaeU1ZcJ6nOC5rLaTZr_vLDrpLCt87asltMUWj2gSli_mXUTrl09hBnBDXI3A1D4rJXHKLHjIAA4nN8qRIRGbpqSNzDwmqJr-jmmmWWZFrZ3n3Al9-13KJnNOK8pcWr70rt3Rsigt4B6CIQ0-ZLK8BZhvROJSifeOfJ6xe2KBqdXBv1ccZZZfEhPLgGbaR5yWm5jLvOMr2MQiPDrZoHOEkcMt-C0xipytOp4sJCJ4bQhb-UoMu1owYydxbd6O7xO71fvqP_bMDpZXC601nA2ggK7h-vi6CJffHv5MM59q8X_DWe1NnZS6KXiMmkXqAmBn10Yu20PNj-kjg
 ```
 5 .添加  Secret text 验证信息
-![avatar](./images/secret.png)
+![avatar](../images/secret.png)
 这里的secert子段输入，我们第四步获取到的service token值。
 id值则为我们创建pipeline时候```withKubeConfig([credentialsId: 'dev-k8s-auth', serverUrl: 'https://10.20.0.126:5443']) ```指定的credentialsId值。
 
