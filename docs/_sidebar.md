@@ -1,6 +1,6 @@
 * Kubernetes:
   * [01-kuadmin安装k8s](kubernetus/kubeadmin安装k8s环境.md)
-  * [02-kubernetus资源订单](kubernetus/kubernetus资源清单.md)
+  * [02-kubernetus资源清单](kubernetus/kubernetus资源清单.md)
 
 
 * Docker:
