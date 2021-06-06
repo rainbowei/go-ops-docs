@@ -10,7 +10,7 @@
   * [Markdown 配置](zh-cn/markdown.md)
   * [代码高亮](zh-cn/language-highlight.md)  
 
-  * Jenkins:
+* Jenkins:
 
   * [jenkins部署k8s项目](jenkins/jenkins部署k8s项目.md)
   * [多页文档](zh-cn/more-pages.md)
