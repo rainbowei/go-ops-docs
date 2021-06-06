@@ -1,1 +1,3 @@
-* [jenkins文档](jenkins文档/01-jenkins的安装.md)
+<!-- docs/_sidebar.md -->
+* 安装文档
+    * [jenkins](jenkins/jenkins的安装)
