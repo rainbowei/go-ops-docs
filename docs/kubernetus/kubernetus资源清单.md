@@ -1,5 +1,6 @@
 > #### 作者：孙科伟
-
+#### [kubenetus 官方文档](https://kubernetes.io/zh/docs/concepts/overview/)
+#### [pod生命周期](https://www.cnblogs.com/linuxk/p/9569618.html)
 ## 1. 资源清单类型：
 #### 1.1 名称空间级别：
 | 工作负载型资源 | 服务发现| 配置与存储型资源 |特殊类型的存储卷  |
