@@ -80,15 +80,7 @@ date:1976-07-31
 ```
 ## 3 常用字段说明：
 #### 1.1 名称空间级别：
-| 工作负载型资源 | 服务发现| 配置与存储型资源 |特殊类型的存储卷  |
-| :-----:|: ----: | :----: |:----:|
-| pod| service | volume(存储卷)CSI(容器存储接口)| configmap | 
-| replicaset| ingress |  |  secret| 
-| deployment| |  | downwardapi（把外部环境中的信息输出给容器） | 
-| statefulset|  |  |  | 
-| daemonset|  |  |  | 
-| job|  |  |  | 
-| cronjob|  |  |  | 
+
 
 ## 4. pod生命周期：
 #### 1.1 名称空间级别：
