@@ -1,7 +1,14 @@
 * Kubernetes:
   * [01-kuadmin安装k8s](kubernetus/kubeadmin安装k8s环境.md)
   * [02-kubernetus资源清单](kubernetus/kubernetus资源清单.md)
-
+  * [03-kubernetus-资源控制器](kubernetus/kubernetus资源清单.md)
+  * [04-kubernetus-service](kubernetus/kubernetus资源清单.md)
+  * [05-kubernetus-存储](kubernetus/kubernetus资源清单.md)
+  * [06-kubernetus-集群调度](kubernetus/kubernetus资源清单.md)
+  * [07-kubernetus-安全](kubernetus/kubernetus资源清单.md)
+  * [08-kubernetus-helm及其他功能性组件](kubernetus/kubernetus资源清单.md)
+  * [09-kubernetus-证书可用时间修改](kubernetus/kubernetus资源清单.md)
+  * [10-kubernetus-高可用k8s集群构建](kubernetus/kubernetus资源清单.md)
 
 * Docker:
   * [配置项](zh-cn/configuration.md)
