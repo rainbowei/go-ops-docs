@@ -33,7 +33,6 @@ Job 负责批处理任务，即仅执行一次的任务，它保证批处理任�
 Cron Job 管理基于时间的 Job，即：
 - 在给定时间点只运行一次
 - 周期性地在给定时间点运行
-
 使用前提条件：**当前使用的 Kubernetes 集群，版本 >= 1.8（对 CronJob）。对于先前版本的集群，版本 <1.8，启动 API Server时，通过传递选项 --runtime-config=batch/v2alpha1=true 可以开启 batch/v2alpha1API**
 典型的用法如下所示：
 - 在给定的时间点调度 Job 运行
