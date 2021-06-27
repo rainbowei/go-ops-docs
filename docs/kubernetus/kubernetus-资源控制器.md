@@ -52,29 +52,42 @@ N-1，在下一个Pod运行之前所有之前的Pod必须都是Running和Ready�
 ## 2. RS，Deployment：
 ### 2.1 基本语法：
 RC （ReplicationController ）主要的作用就是用来确保容器应用的副本数始终保持在用户定义的副本数 。即如
-果有容器异常退出，会自动创建新的Pod来替代；而如果异常多出来的容器也会自动回收。Kubernetes 官方建议使用 RS（ReplicaSet ） 替代 RC （ReplicationController ） 进行部署。RS 跟 RC 没有本质的不同，只是名字不一样，并且 RS 支持集合式的 selector
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: my-dep
-  name: my-dep
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: my-dep
-  template:
-    metadata:
-      labels:
-        app: my-dep
-    spec:
-      containers:
-      - image: busybox
-        name: busybox
+果有容器异常退出，会自动创建新的Pod来替代；而如果异常多出来的容器也会自动回收。Kubernetes 官方建议使用 RS（ReplicaSet ） 替代 RC （ReplicationController ） 进行部署。RS 跟 RC 没有本质的不同，只是名字不一样，并且 RS 支持集合式的 selector。
+#### 2.1.1 rs定义：
 ```
+apiVersion: apps/v1 
+kind: ReplicaSet 
+metadata: 
+   name: nginx-set 
+   labels: app: nginx 
+spec: 
+   replicas: 3 
+   selector: 
+     matchLabels: 
+        app: nginx 
+    template: 
+       metadata: 
+          labels: app: nginx 
+       spec: 
+        containers: 
+        - name: nginx 
+          image: nginx:1.7.9
+```
+从这个 YAML 文件中，我们可以看到，一个 ReplicaSet 对象，其实就是由副本数目的定义和一
+个 Pod 模板组成的。不难发现，它的定义其实是 Deployment 的一个子集。更重要的是，Deployment 控制器实际操纵的，正是这样的 ReplicaSet 对象，而不是 Pod 对
+象。
 
+
+#### 2.1.2 deployment 定义实例：
+![avatar](../images/deployment-01.png)
+1. 如上图所示，类似 Deployment 这样的一个控制器，实际上都是由上半部分的控制器定义（包括期望状态），加上下半部分的被控制对象的模板组成的。
+2. 这个 Deployment 定义的编排动作非常简单，即：确保携带了 app=nginx 标签的 Pod 的个数，永
+远等于 spec.replicas 指定的个数，即 2 个。
+这就意味着，如果在这个集群中，携带 app=nginx 标签的 Pod 的个数大于 2 的时候，就会有旧的
+Pod 被删除；反之，就会有新的 Pod 被创建。
+3. 而被控制对象的定义，则来自于一个“模板”。比如，Deployment 里的 template 字段。可以看到，Deployment 这个 template 字段里的内容，跟一的 Pod 对象的 API 定义，丝毫不差。而所有被这个 Deployment 管理的 Pod 实例，其实都是根据这个 template 字段的内容创建出来的。像 Deployment 定义的 template 字段，在 Kubernetes 项目中有一个专有的名字，叫作PodTemplate（Pod 模板）。我们还会看到其他类型的对象模板，比如 Volume 的模板。
+
+#### 2.1.3 deployment与ReplicaSet关系
 ## 3 Daemonset,Job,cronjob：
 #### 3.1 常用字段：
 
