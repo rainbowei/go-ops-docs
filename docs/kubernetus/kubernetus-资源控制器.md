@@ -25,8 +25,7 @@ Deployment 为 Pod 和 ReplicaSet 提供了一个声明式定义 (declarative) �
 DaemonSet 确保全部（或者一些）Node 上运行一个 Pod 的副本。当有 Node 加入集群时，也会为他们新增一个Pod 。当有 Node 从集群移除时，这些 Pod 也会被回收。删除 DaemonSet 将会删除它创建的所有 Pod使用 DaemonSet 的一些典型用法：
 - 运行集群存储 daemon，例如在每个 Node 上运行 glusterd、ceph
 - 在每个 Node 上运行日志收集 daemon，例如 fluentd 、 logstash
-- 在每个 Node 上运行监控 daemon，例如 Prometheus Node Exporter、 collectd 、Datadog 代理、
-New Relic 代理，或 Ganglia gmond
+- 在每个 Node 上运行监控 daemon，例如 Prometheus Node Exporter、 collectd 、Datadog 代理、New Relic 代理，或 Ganglia gmond
 ### 1.6 Job
 Job 负责批处理任务，即仅执行一次的任务，它保证批处理任务的一个或多个 Pod 成功结束.
 ### 1.7 CronJob
@@ -51,11 +50,30 @@ N-1，在下一个Pod运行之前所有之前的Pod必须都是Running和Ready�
 应用的资源使用率通常都有高峰和低谷的时候，如何削峰填谷，提高集群的整体资源利用率，让service中的Pod
 个数自动调整呢？这就有赖于Horizontal Pod Autoscaling了，顾名思义，使Pod水平自动缩放
 ## 2. RS，Deployment：
-#### 2.1 基本语法：
-- 缩进时不允许tab，只可以空格
-- #代表注释
-- 缩进多少个空格没关系，只要只同一级别即可。
-
+### 2.1 基本语法：
+RC （ReplicationController ）主要的作用就是用来确保容器应用的副本数始终保持在用户定义的副本数 。即如
+果有容器异常退出，会自动创建新的Pod来替代；而如果异常多出来的容器也会自动回收。Kubernetes 官方建议使用 RS（ReplicaSet ） 替代 RC （ReplicationController ） 进行部署。RS 跟 RC 没有本质的不同，只是名字不一样，并且 RS 支持集合式的 selector
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-dep
+  name: my-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-dep
+  template:
+    metadata:
+      labels:
+        app: my-dep
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+```
 
 ## 3 Daemonset,Job,cronjob：
 #### 3.1 常用字段：
