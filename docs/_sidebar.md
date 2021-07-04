@@ -23,3 +23,8 @@
   * [多页文档](zh-cn/more-pages.md)
   * [定制导航栏](zh-cn/custom-navbar.md)
   * [封面](zh-cn/cover.md)
+
+
+* Django:
+
+  * [django序列化之接口的实现方式](django/接口的实现方式.md)
