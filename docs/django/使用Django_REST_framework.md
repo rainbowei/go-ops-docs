@@ -10,7 +10,7 @@ pip install django-filter
 #### 1.2配置到app：
 ```
 INSTALLED_APPS = [
-    ...
+    ....
     'rest_framework',
 ]
 ``` 
