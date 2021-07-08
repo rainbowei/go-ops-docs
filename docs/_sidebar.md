@@ -27,5 +27,5 @@
 
 * Django:
 
-  * [django序列化之接口的实现方式](django/接口的实现方式.md)
-  * [使用django_rest_framework](django/使用Django_REST_framework.md)
+  * [django序列化之接口的实现方式](django/drf/接口的实现方式.md)
+  * [使用django_rest_framework](django/drf/drf的modelserializer实现列表页功能.md)
