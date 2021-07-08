@@ -1,6 +1,6 @@
 > #### 作者：孙科伟
 #### [ Django REST framework官方文档](https://www.django-rest-framework.org/#)
-## 1 drf的modelserializer实现列表页功能：
+## 1 Django REST framework安装：
 #### 1.1 Django REST framework安装：
 ```
 pip install djangorestframework
@@ -23,8 +23,8 @@ urlpatterns = [
 ]
 
 ```
-
-#### 1.4 编写接口：
+## 2 编写接口：
+#### 2.1 编写接口：
 - .serializer文件内容：
   文件中的name，status，number，version，image_url等字段要和models中定义的要一致。
   ``` python

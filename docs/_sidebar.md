@@ -29,3 +29,6 @@
 
   * [django序列化之接口的实现方式](django/drf/接口的实现方式.md)
   * [使用django_rest_framework](django/drf/drf的modelserializer实现列表页功能.md)
+  * [GenericView方式实现列表页和分页功能](django/drf/GenericView方式实现列表页和分页功能.md)
+  
+
