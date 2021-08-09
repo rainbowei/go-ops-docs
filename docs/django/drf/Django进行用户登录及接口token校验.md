@@ -55,7 +55,7 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=60 * 60 * 2)
 }
 ```
-## 4 编写views.py
+## 4 编写views
 1、user_login是用户登录验证接口，使用POST请求，成功后返回给前端token。用户名和密码是使用django命令python managy.py createsuperuser创建的。
 
 2、get_info是获取信息接口，使用GET请求，需要携带token才能访问。
@@ -112,7 +112,7 @@ def get_info(request):
         }
     )
 ```
-## 5 编写urls.py
+## 5 编写urls
 ```python
 from django.urls import path
 from my_app import views
