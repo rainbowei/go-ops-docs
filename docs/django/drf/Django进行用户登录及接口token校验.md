@@ -16,7 +16,6 @@ pip install djangorestframework-jwt
 #### 3.1 配置setting.py
 ```python
 import datetime
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
