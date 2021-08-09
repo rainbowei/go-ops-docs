@@ -8,10 +8,10 @@
 - djangorestframework-jwt：1.11.0
 ## 2 安装：
 #### 2.1 安装相关依赖
-  ``` python
+``` python
 pip install djangorestframework
 pip install djangorestframework-jwt
-  ```
+```
 ## 3 配置settings.py
 #### 3.1 配置setting.py
 ```python
@@ -67,7 +67,6 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework_jwt.settings import api_settings
-
 
 def user_login(request):
     obj = json.loads(request.body)
