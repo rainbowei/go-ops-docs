@@ -10,13 +10,6 @@
   * [09-kubernetus-证书可用时间修改](kubernetus/kubernetus资源清单.md)
   * [10-kubernetus-高可用k8s集群构建](kubernetus/kubernetus资源清单.md)
 
-* Docker:
-  * [配置项](zh-cn/configuration.md)
-  * [主题](zh-cn/themes.md)
-  * [使用插件](zh-cn/plugins.md)
-  * [Markdown 配置](zh-cn/markdown.md)
-  * [代码高亮](zh-cn/language-highlight.md)  
-
 * Jenkins:
 
   * [jenkins部署k8s项目](jenkins/jenkins部署k8s项目.md)
@@ -31,5 +24,6 @@
   * [02-使用django_rest_framework](django/drf/drf的modelserializer实现列表页功能.md)
   * [03-GenericView方式实现列表页和分页功能](django/drf/GenericView方式实现列表页和分页功能.md)
   * [04-Django进行用户登录及接口token校验](django/drf/Django进行用户登录及接口token校验.md)
+  * [05-Django框架之-admin管理员后台](django/admin/Django框架之-admin管理员后台.md)
   
 
