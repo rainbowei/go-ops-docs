@@ -126,3 +126,4 @@ urlpatterns = [
 2、接下来使用GET方式调用getInfo接口的时候，需要在Headers里面指定Authorization的值为'JWT ' + token的形式。
 
 比如token = 'abcd123456789'，Authorization的值就是'JWT abcd123456789'，都是字符串格式。
+
