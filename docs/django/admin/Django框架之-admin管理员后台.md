@@ -145,8 +145,7 @@ class  Useradmin(UserAdmin):
 - @admin.register(Users) 注册models模型，等价于：admin.register(Users,Useradmin)    
 
 - list_display: admin后台页面要显示的字段列表：如下图：
-
-  ![avatar](../images/image-20210811151750667.png)
+ ![avatar](../images/image-20210811151750667.png)
 
 - list_display_links: 指定字段，通过字段双击后，可以进入编辑界面。如上图通过点击id和用户名字段，可以进入编辑界面。
 
