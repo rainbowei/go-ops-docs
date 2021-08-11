@@ -145,7 +145,7 @@ class  Useradmin(UserAdmin):
 - @admin.register(Users) 注册models模型，等价于：admin.register(Users,Useradmin)    
 
 - list_display: admin后台页面要显示的字段列表：如下图：
- ![avatar](../images/image-20210811151750667.png)
+ ![avatar](../..//images/image-20210811151750667.png)
 
 - list_display_links: 指定字段，通过字段双击后，可以进入编辑界面。如上图通过点击id和用户名字段，可以进入编辑界面。
 
@@ -155,9 +155,9 @@ class  Useradmin(UserAdmin):
 
 -    fieldsets：指定编辑区域，其中：认证信息，个人信息，加入日期，为各个字段的分界线。fields后面为各个字段名称，如下图所示：
 
-![image-20210811152315612](C:\Users\huawei\AppData\Roaming\Typora\typora-user-images\image-20210811152315612.png)
+![image-20210811152315612](../../images/image-20210811152315612.png)
 
 add_fieldsets：指定新增页面：其中：认证信息，个人信息，加入日期，为各个字段的分界线。fields后面为各个字段名称，
 
-![image-20210811152550380](C:\Users\huawei\AppData\Roaming\Typora\typora-user-images\image-20210811152550380.png)
+![image-20210811152550380](../../images/image-20210811152550380.png)
 
