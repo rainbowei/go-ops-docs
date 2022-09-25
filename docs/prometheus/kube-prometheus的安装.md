@@ -166,3 +166,5 @@ prometheus-operator     ClusterIP   None             <none>        8080/TCP     
 参考文档：[搞搞 Prometheus: Alertmanager 解析](https://zhuanlan.zhihu.com/p/63270049?utm_source=wechat_session)
 
 https://blog.csdn.net/qq_37332827/article/details/105114439
+
+https://www.qikqiak.com/k8s-book/docs/58.Prometheus%20Operator.html
