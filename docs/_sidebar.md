@@ -26,4 +26,8 @@
   * [04-Django进行用户登录及接口token校验](django/drf/Django进行用户登录及接口token校验.md)
   * [05-Django框架之-admin管理员后台](django/admin/Django框架之-admin管理员后台.md)
   
+* Prometheus:
 
+  * [01-prometheus的安装](prometheus/kube-prometheus的安装.md)
+  * [02-prometheus的安装](prometheus/-prometheus的报警规则.md)
+  * [03-alertmanager的模板定义](prometheus/alertmanager 模板定义.md)
