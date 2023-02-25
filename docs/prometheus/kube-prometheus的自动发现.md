@@ -50,6 +50,31 @@
     target_label: __scheme__
     replacement: $1
     action: replace
+  kubernetes_sd_configs:
+  - role: pod
+    kubeconfig_file: ""
+    follow_redirects: true
+
+- job_name: "ack-prd-16-datawarehouse-kafka01"
+   metrics_path: '/metrics'
+   static_configs:
+     - targets:
+       - "172.16.3.92:9100"
+
+- job_name: "ack-prd-16-datawarehouse-kafka02"
+   metrics_path: '/metrics'
+   static_configs:
+     - targets:
+       - "172.16.3.93:9100"       
+
+- job_name: "ack-prd-16-datawarehouse-kafka03"
+   metrics_path: '/metrics'
+   static_configs:
+     - targets:
+       - "172.16.3.91:9100"
+    
+    
+    
 ```
 
 要想自动发现集群中的 pod，就需要我们在 deployment template 的`annotation`区域添加`prometheus.io/scrape=true`的声明，将上面文件直接保存为 prometheus-additional.yaml，然后通过这个文件创建一个对应的 Secret 对象
@@ -102,6 +127,7 @@ spec:
   resources:
     requests:
       memory: 400Mi
+  retention: 15d //定义prometheus存储天数    
   ruleSelector:
     matchLabels:
       prometheus: k8s

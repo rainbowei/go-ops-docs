@@ -32,7 +32,7 @@ cd kube-prometheus/manifests/&apply -f .
 
 ###### 3 -数据持久化
 
--  prometheus持久化： 
+- prometheus持久化： 
 
   修改文件：kube-prometheus/manifests/prometheus-prometheus.yaml
 
@@ -68,6 +68,7 @@ cd kube-prometheus/manifests/&apply -f .
     resources:
       requests:
         memory: 400Mi
+    retention: 15d     //设置保持15天数据
     ruleSelector:
       matchLabels:
         prometheus: k8s
