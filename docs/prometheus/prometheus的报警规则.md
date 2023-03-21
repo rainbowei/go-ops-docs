@@ -78,3 +78,9 @@ summary: 内存使用率大于80
 
 
 
+
+
+推荐地址：
+
+https://awesome-prometheus-alerts.grep.to/
+

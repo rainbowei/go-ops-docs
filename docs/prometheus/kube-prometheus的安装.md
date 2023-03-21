@@ -77,6 +77,9 @@ cd kube-prometheus/manifests/&apply -f .
       fsGroup: 2000
       runAsNonRoot: true
       runAsUser: 1000
+    additionalScrapeConfigs:       //定义job规则
+      name: additional-configs
+      key: prometheus-additional.yaml  
     serviceAccountName: prometheus-k8s
     serviceMonitorNamespaceSelector: {}
     serviceMonitorSelector: {}

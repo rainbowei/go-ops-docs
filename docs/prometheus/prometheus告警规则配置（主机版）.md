@@ -175,10 +175,7 @@ groups:
 curl -X POST http://127.0.0.1:9090/-/reload
 ```
 
-
-
-
-
 参考文档：
 
 https://blog.csdn.net/manwufeilong/article/details/126159641
+

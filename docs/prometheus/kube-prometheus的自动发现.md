@@ -142,6 +142,15 @@ spec:
   serviceAccountName: prometheus-k8s
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
+  storage: #加上下面这一段，一共9句
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 2000M
+        storageClassName: eks-online-prometheus
   version: v2.5.0
 ```
 
