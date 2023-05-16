@@ -67,7 +67,7 @@ cd kube-prometheus/manifests/&apply -f .
     replicas: 2
     resources:
       requests:
-        memory: 400Mi
+        memory: 4000Mi
     retention: 15d     //设置保持15天数据
     ruleSelector:
       matchLabels:

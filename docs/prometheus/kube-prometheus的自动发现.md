@@ -72,8 +72,42 @@
    static_configs:
      - targets:
        - "172.16.3.91:9100"
-    
-    
+   
+- job_name: kubernetes-service-endpoints
+  kubernetes_sd_configs:
+  - role: endpoints
+  relabel_configs:
+  - action: keep
+    regex: true
+    source_labels:
+    - __meta_kubernetes_service_annotation_prometheus_io_scrape
+  - action: replace
+    regex: (https?)
+    source_labels:
+    - __meta_kubernetes_service_annotation_prometheus_io_scheme
+    target_label: __scheme__
+  - action: replace
+    regex: (.+)
+    source_labels:
+    - __meta_kubernetes_service_annotation_prometheus_io_path
+    target_label: __metrics_path__
+  - action: replace
+    regex: ([^:]+)(?::\d+)?;(\d+)
+    replacement: $1:$2
+    source_labels:
+    - __address__
+    - __meta_kubernetes_service_annotation_prometheus_io_port
+    target_label: __address__
+  - action: labelmap
+    regex: __meta_kubernetes_service_label_(.+)
+  - action: replace
+    source_labels:
+    - __meta_kubernetes_namespace
+    target_label: kubernetes_namespace
+  - action: replace
+    source_labels:
+    - __meta_kubernetes_service_name
+    target_label: kubernetes_name   
     
 ```
 
@@ -136,6 +170,7 @@ spec:
     fsGroup: 2000
     runAsNonRoot: true
     runAsUser: 1000
+    //
   additionalScrapeConfigs:
     name: additional-configs
     key: prometheus-additional.yaml
